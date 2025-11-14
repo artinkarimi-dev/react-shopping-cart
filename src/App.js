@@ -7,11 +7,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Specifications: [], 
+      Specifications: [],
     };
   }
 
-  
   handleAddProduct = (product) => {
     this.setState((prev) => ({
       Specifications: [...prev.Specifications, product],
@@ -28,7 +27,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <Routes>
-      
+
           <Route
             path="/"
             element={
@@ -39,16 +38,16 @@ export default class App extends React.Component {
             }
           />
 
-      
           <Route
             path="/purchased"
             element={
               <Purchased
                 Specifications={this.state.Specifications}
-                sendTrash={this.handleRemoveProduct
+                sendTrash={this.handleRemoveProduct}
               />
             }
           />
+
         </Routes>
       </Router>
     );
