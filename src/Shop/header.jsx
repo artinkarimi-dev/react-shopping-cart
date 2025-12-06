@@ -1,20 +1,19 @@
 
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCartShopping, FaBars, FaXmark } from "react-icons/fa6";
 
-export default class Header extends Component {
-  state = {
-    mobileMenuOpen: false,
+export default function Header(props) {
+  
+  const [mobileMenuOpen , setMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+
+    setMobileMenuOpen(!mobileMenuOpen)
   };
 
-  toggleMobileMenu = () => {
-    this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
-  };
-
-  render() {
-    const { link, text } = this.props;
-    const { mobileMenuOpen } = this.state;
+  
+    const { link, text } = props;
 
     return (
       <div className="bg-gray-50 text-gray-800">
@@ -39,7 +38,7 @@ export default class Header extends Component {
               
               <div className="sm:hidden flex items-center">
                 <button
-                  onClick={this.toggleMobileMenu}
+                  onClick={toggleMobileMenu}
                   className="p-2 focus:outline-none"
                 >
                   {mobileMenuOpen ? (
@@ -115,5 +114,5 @@ export default class Header extends Component {
         </header>
       </div>
     );
-  }
+
 }

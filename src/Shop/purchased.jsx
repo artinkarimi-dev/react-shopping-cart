@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import Header from "./header";
 import { FaTrashCan } from "react-icons/fa6";
 
-export default class Purchased extends Component {
-  trashCan(id) {
-    if (this.props.sendTrash) {
-      this.props.sendTrash(id);
+export default function Purchased(props){
+   const trashCan = (id) => {
+    if (props.sendTrash) {
+      props.sendTrash(id);
     } else {
       console.log("sendTrash not defined", id);
     }
   }
 
-  render() {
-    const { Specifications } = this.props;
+    const { Specifications } = props;
 
     return (
       <>
@@ -71,7 +70,7 @@ export default class Purchased extends Component {
                       <button
                         className="text-gray-500 hover:text-red-600 transition p-2 rounded-full hover:bg-red-100"
                         title="Remove item"
-                        onClick={this.trashCan.bind(this, item.id)}
+                        onClick={trashCan.bind(this, item.id)}
                       >
                         <FaTrashCan className="text-xl" />
                       </button>
@@ -142,4 +141,4 @@ export default class Purchased extends Component {
       </>
     );
   }
-}
+

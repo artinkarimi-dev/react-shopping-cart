@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 
-export default class btnMenu extends Component {
-  render() {
+export default function btnMenu(){
+  
     return (
       <div>
         <div class="flex items-center gap-3">
@@ -13,5 +13,5 @@ export default class btnMenu extends Component {
         </div>
       </div>
     );
-  }
+  
 }

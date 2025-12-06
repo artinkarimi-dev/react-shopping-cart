@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Header from "./header";
 import Product from "./products";
 
-export default class Shop extends Component {
-  constructor(props) {
-    super(props);
+export default function Shop() {
+ 
+    
     this.state = {
       products: [
         {
@@ -101,9 +101,12 @@ export default class Shop extends Component {
       Specifications: [],
     };
 
+
+   
+
     this.clickBtn = this.clickBtn.bind(this);
     this.trashCanShop = this.trashCanShop.bind(this);
-  }
+  
 
   clickBtn(product) {
     this.props.addToPurchased(product);
